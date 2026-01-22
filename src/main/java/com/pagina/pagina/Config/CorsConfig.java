@@ -1,8 +1,14 @@
 package com.pagina.pagina.Config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.Arrays;
 
 // Configuración global de CORS 
 // Permite que cualquier frontend pueda consumir la API REST pero con cariño
@@ -10,30 +16,50 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        
+        // Permitir credenciales
+        config.setAllowCredentials(true);
+        
+        // Orígenes permitidos
+        config.setAllowedOrigins(Arrays.asList(
+            "https://backgamereviewer.onrender.com",
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "http://localhost:8080"
+        ));
+        
+        // Headers permitidos
+        config.addAllowedHeader("*");
+        
+        // Métodos permitidos
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
+        
+        // Exponer headers
+        config.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        
+        // Aplicar a todos los endpoints
+        source.registerCorsConfiguration("/**", config);
+        
+        return new CorsFilter(source);
+    }
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**") // Aplica a todos los endpoints que empiecen con /api/
+        registry.addMapping("/**")
                 .allowedOrigins(
                     "https://backgamereviewer.onrender.com",
                     "http://localhost:3000",
-                    "http://localhost:5173"
-                ) // Orígenes permitidos
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS") // Métodos HTTP permitidos
-                .allowedHeaders("*") // Permite todos los headers
-                .allowCredentials(true) // Permite cookies y autenticación
-                .maxAge(3600); // Cache de preflight por 1 hora
-
-        // También permitir acceso a Swagger UI desde cualquier origen
-        registry.addMapping("/swagger-ui/**")
-                .allowedOriginPatterns("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                    "http://localhost:5173",
+                    "http://localhost:8080"
+                )
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(true);
-
-        registry.addMapping("/v3/api-docs/**") // Permite acceso a Swagger
-                .allowedOriginPatterns("*") // Permite cualquier origen para Swagger
-                .allowedMethods("GET") // Permite solo GET
-                .allowedHeaders("*") // Permite todos los headers
-                .allowCredentials(true); // Permite cookies y autenticación
+                .exposedHeaders("Authorization", "Content-Type")
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
