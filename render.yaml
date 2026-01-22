@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: gamereviewer-backend
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:postgresql://dpg-d5l9lhogjchc7382b1v0-a.oregon-postgres.render.com/gamereviewer_db?sslmode=require
+      - key: SPRING_DATASOURCE_USERNAME
+        value: dandev
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false # Configurar manualmente en Render Dashboard por seguridad
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SERVER_PORT
+        value: 9090
+      - key: JAVA_OPTS
+        value: "-Xmx512m -Xms256m"
+    healthCheckPath: /actuator/health
