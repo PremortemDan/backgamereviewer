@@ -13,7 +13,11 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**") // Aplica a todos los endpoints que empiecen con /api/
-                .allowedOriginPatterns("*") // Permite cualquier origen
+                .allowedOrigins(
+                    "https://backgamereviewer.onrender.com",
+                    "http://localhost:3000",
+                    "http://localhost:5173"
+                ) // Orígenes permitidos
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS") // Métodos HTTP permitidos
                 .allowedHeaders("*") // Permite todos los headers
                 .allowCredentials(true) // Permite cookies y autenticación
