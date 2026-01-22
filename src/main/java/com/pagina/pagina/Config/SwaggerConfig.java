@@ -23,6 +23,9 @@ public class SwaggerConfig {
         @Value("${server.port:9090}")
         private String serverPort;
 
+        @Value("${app.backend.url:http://localhost:9090}")
+        private String backendUrl;
+
         // Configuración principal de Swagger para toda la aplicación
         // Define metadatos, servidores, seguridad y documentación externa que se deve
         // crear
@@ -32,14 +35,14 @@ public class SwaggerConfig {
                 return new OpenAPI()
                                 // Información general de la API
                                 .info(new Info()
-                                                .title("API de Gestión - Sistema Página")
+                                                .title("API de Gestión - Game Reviewer")
                                                 .version("1.0.0")
                                                 .description("""
-                                                                API REST completa para la gestión del sistema.
+                                                                API REST completa para la gestión del sistema Game Reviewer.
 
                                                                 Características principales:
-                                                                - Gestión de usuarios
-                                                                - Autenticación y autorización
+                                                                - Gestión de usuarios y reviews
+                                                                - Gestión de juegos
                                                                 - Operaciones CRUD completas
                                                                 - Respuestas estandarizadas
 
@@ -47,8 +50,8 @@ public class SwaggerConfig {
                                                                 """)
                                                 .contact(new Contact()
                                                                 .name("Equipo de Desarrollo")
-                                                                .email("contacto@pagina.com")
-                                                                .url("https://www.pagina.com"))
+                                                                .email("contacto@gamereviewer.com")
+                                                                .url("https://backgamereviewer.onrender.com"))
                                                 .license(new License()
                                                                 .name("Apache 2.0")
                                                                 .url("https://www.apache.org/licenses/LICENSE-2.0.html")))
@@ -56,11 +59,11 @@ public class SwaggerConfig {
                                 // Configuración de servidores
                                 .servers(List.of(
                                                 new Server()
-                                                                .url("http://localhost:" + serverPort)
-                                                                .description("Servidor de Desarrollo Local"),
+                                                                .url(backendUrl)
+                                                                .description("Servidor Actual"),
                                                 new Server()
-                                                                .url("https://api.pagina.com")
-                                                                .description("Servidor de Producción")))
+                                                                .url("http://localhost:" + serverPort)
+                                                                .description("Servidor de Desarrollo Local")))
 
                                 // Configuración de seguridad por si las dudas se agrega JWT
                                 .components(new Components()

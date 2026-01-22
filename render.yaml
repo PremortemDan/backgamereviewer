@@ -19,4 +19,6 @@ services:
         value: 9090
       - key: JAVA_OPTS
         value: "-Xmx512m -Xms256m"
+      - key: BACKEND_URL
+        value: https://gamereviewer-backend.onrender.com
     healthCheckPath: /actuator/health
