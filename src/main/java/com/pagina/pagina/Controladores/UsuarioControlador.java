@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,10 +51,39 @@ public class UsuarioControlador {
     // POST - Crear un nuevo usuario
     @Operation(summary = "Crear un nuevo usuario", description = "Crea y registra un nuevo usuario en el sistema")
     @PostMapping
-    public ResponseEntity<Usuario> crearUsuario(
+    public ResponseEntity<?> crearUsuario(
             @Parameter(description = "Datos del usuario a crear", required = true) @RequestBody Usuario usuario) {
-        Usuario nuevoUsuario = usuarioServicio.crearUsuario(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
+        try {
+            Usuario nuevoUsuario = usuarioServicio.crearUsuario(usuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
+        } catch (ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("El usuario fue modificado por otra transacción. Por favor, intenta nuevamente.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al crear el usuario: " + e.getMessage());
+        }
+    }
+
+    // PUT - Actualizar un usuario existente
+    @Operation(summary = "Actualizar un usuario", description = "Actualiza los datos de un usuario existente")
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarUsuario(
+            @Parameter(description = "ID del usuario a actualizar", required = true) @PathVariable Long id,
+            @Parameter(description = "Datos actualizados del usuario", required = true) @RequestBody Usuario usuario) {
+        try {
+            Usuario usuarioActualizado = usuarioServicio.actualizarUsuario(id, usuario);
+            return ResponseEntity.ok(usuarioActualizado);
+        } catch (ObjectOptimisticLockingFailureException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("El usuario fue modificado por otra transacción. Por favor, recarga los datos e intenta nuevamente.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al actualizar el usuario: " + e.getMessage());
+        }
     }
 
     // DELETE - Eliminar un usuario
