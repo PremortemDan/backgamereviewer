@@ -26,6 +26,7 @@ public class CorsConfig implements WebMvcConfigurer {
         
         // Orígenes permitidos
         config.setAllowedOrigins(Arrays.asList(
+            "https://frontgamereviewer.vercel.app",
             "https://backgamereviewer.onrender.com",
             "http://localhost:3000",
             "http://localhost:5173",
@@ -51,6 +52,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins(
+                    "https://frontgamereviewer.vercel.app",
                     "https://backgamereviewer.onrender.com",
                     "http://localhost:3000",
                     "http://localhost:5173",
