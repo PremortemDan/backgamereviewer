@@ -51,6 +51,16 @@ public class UsuarioServicio {
             throw new IllegalArgumentException("La contraseña es obligatoria");
         }
         
+        // Verificar si el correo ya existe
+        if (usuarioRepositorio.existsByCorreo(correo)) {
+            throw new IllegalArgumentException("El correo electrónico ya está registrado");
+        }
+        
+        // Verificar si el nombre de usuario ya existe
+        if (usuarioRepositorio.existsByNombreUsuario(nombreUsuario)) {
+            throw new IllegalArgumentException("El nombre de usuario ya está en uso");
+        }
+        
         // Crear el usuario
         Usuario usuario = new Usuario();
         usuario.setNombreUsuario(nombreUsuario.trim());
@@ -62,6 +72,22 @@ public class UsuarioServicio {
         usuario.setEstado(Estado.ACTIVO);
         
         return usuarioRepositorio.save(usuario);
+    }
+    
+    // Login de usuario
+    public Optional<Usuario> login(String username, String password) {
+        // Buscar por nombre de usuario o correo
+        Optional<Usuario> usuario = usuarioRepositorio.findByNombreUsuario(username);
+        if (usuario.isEmpty()) {
+            usuario = usuarioRepositorio.findByCorreo(username);
+        }
+        
+        // Verificar contraseña
+        if (usuario.isPresent() && passwordEncoder.matches(password, usuario.get().getContrasenaHash())) {
+            return usuario;
+        }
+        
+        return Optional.empty();
     }
 
     // Crear un nuevo usuario

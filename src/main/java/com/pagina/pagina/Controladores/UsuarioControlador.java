@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pagina.pagina.DTOs.RegistroUsuarioDTO;
+import com.pagina.pagina.DTOs.LoginDTO;
+import com.pagina.pagina.DTOs.LoginResponseDTO;
 import com.pagina.pagina.Modelos.Usuario;
 import com.pagina.pagina.Servicios.UsuarioServicio;
 
@@ -67,6 +69,37 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error al crear el usuario: " + e.getMessage());
         }
+    }
+
+    // POST - Login de usuario
+    @Operation(summary = "Login de usuario", description = "Autentica un usuario y retorna sus datos si las credenciales son correctas")
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponseDTO> login(
+            @Parameter(description = "Credenciales de login", required = true) @RequestBody LoginDTO loginDTO) {
+        try {
+            var usuario = usuarioServicio.login(loginDTO.getUsername(), loginDTO.getPassword());
+            
+            if (usuario.isPresent()) {
+                // Generar token simple (en producción usar JWT)
+                String token = "Bearer-" + System.currentTimeMillis();
+                LoginResponseDTO response = new LoginResponseDTO(true, token, usuario.get());
+                return ResponseEntity.ok(response);
+            } else {
+                LoginResponseDTO response = new LoginResponseDTO(false, "Credenciales inválidas");
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+            }
+        } catch (Exception e) {
+            LoginResponseDTO response = new LoginResponseDTO(false, "Error al iniciar sesión: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+    
+    // POST - Logout de usuario
+    @Operation(summary = "Logout de usuario", description = "Cierra la sesión del usuario")
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout() {
+        // En una implementación real, aquí invalidarías el token
+        return ResponseEntity.ok().body("{\"success\": true, \"message\": \"Sesión cerrada correctamente\"}");
     }
 
     // PUT - Actualizar un usuario existente

@@ -11,6 +11,8 @@
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/ReviewControlador.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/UsuarioControlador.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/JuegoDTO.java
+/home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/LoginDTO.java
+/home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/LoginResponseDTO.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/RegistroUsuarioDTO.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Modelos/Estado.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Modelos/EstadoReview.java

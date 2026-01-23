@@ -16,6 +16,7 @@ com/pagina/pagina/Controladores/UsuarioControlador.class
 com/pagina/pagina/Servicios/InformacionFooterServicio.class
 com/pagina/pagina/Controladores/JuegosControlador.class
 com/pagina/pagina/Controladores/RedesSocialesControlador.class
+com/pagina/pagina/DTOs/LoginDTO.class
 com/pagina/pagina/Servicios/RedesSocialesServicio.class
 com/pagina/pagina/Repositorios/LogoRepositorio.class
 com/pagina/pagina/Repositorios/PiedePaginaRepositorio.class
@@ -40,3 +41,4 @@ com/pagina/pagina/Config/SecurityConfig.class
 com/pagina/pagina/Config/DataInitializer.class
 com/pagina/pagina/Repositorios/MarcasAsociadasRepositorio.class
 com/pagina/pagina/Modelos/Usuario.class
+com/pagina/pagina/DTOs/LoginResponseDTO.class
