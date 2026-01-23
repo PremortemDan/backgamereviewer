@@ -1,0 +1,318 @@
+nohup: no se tendrá en cuenta la entrada
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-------------------------< [0;36mcom.pagina:pagina[0;1m >--------------------------[m
+[[1;34mINFO[m] [1mBuilding pagina 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:4.0.0:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mpagina[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mpagina[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 0 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.1:compile[m [1m(default-compile)[m @ [36mpagina[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mpagina[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/dandev/Documentos/PINOS/backgamereviewer/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.1:testCompile[m [1m(default-testCompile)[m @ [36mpagina[0;1m ---[m
+[[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+[[1;34mINFO[m] Compiling 1 source file with javac [debug parameters release 17] to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:4.0.0:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mpagina[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:4.0.0:run[m [1m(default-cli)[m @ [36mpagina[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.0)
+
+2026-01-23T00:05:23.499-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Starting PaginaApplication using Java 17.0.17 with PID 16501 (/home/dandev/Documentos/PINOS/backgamereviewer/target/classes started by dandev in /home/dandev/Documentos/PINOS/backgamereviewer)
+2026-01-23T00:05:23.512-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-23T00:05:23.752-05:00  INFO 16501 --- [pagina] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-23T00:05:23.753-05:00  INFO 16501 --- [pagina] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-23T00:05:26.741-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-23T00:05:26.903-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 8 JPA repository interfaces.
+2026-01-23T00:05:28.408-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-01-23T00:05:28.448-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-23T00:05:28.449-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-23T00:05:28.529-05:00  INFO 16501 --- [pagina] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4767 ms
+2026-01-23T00:05:29.201-05:00  INFO 16501 --- [pagina] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-23T00:05:29.403-05:00  INFO 16501 --- [pagina] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 7.1.8.Final
+2026-01-23T00:05:30.661-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-23T00:05:30.735-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-23T00:05:33.177-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@163731db
+2026-01-23T00:05:33.179-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-23T00:05:33.411-05:00  WARN 16501 --- [pagina] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-23T00:05:34.428-05:00  INFO 16501 --- [pagina] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://dpg-d5l9lhogjchc7382b1v0-a.oregon-postgres.render.com/gamereviewer_db?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: gamereviewer_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-23T00:05:36.796-05:00  INFO 16501 --- [pagina] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table videojuegos_generos (videojuego_id bigint not null, genero varchar(255))
+Hibernate: create table videojuegos_plataformas (videojuego_id bigint not null, plataforma varchar(255))
+Hibernate: alter table if exists videojuegos_generos add constraint FK4wgqp973n9w7elcm1xsljmg2w foreign key (videojuego_id) references videojuegos
+Hibernate: alter table if exists videojuegos_plataformas add constraint FK42v2pfsbb428ljrpvi611nn3x foreign key (videojuego_id) references videojuegos
+2026-01-23T00:05:38.389-05:00  INFO 16501 --- [pagina] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:05:38.603-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-23T00:05:39.488-05:00  WARN 16501 --- [pagina] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-23T00:05:39.733-05:00  WARN 16501 --- [pagina] [  restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 50302e67-1e1e-422d-b248-cce8bf3832d8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-23T00:05:39.748-05:00  INFO 16501 --- [pagina] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-23T00:05:40.316-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-23T00:05:41.374-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-01-23T00:05:41.596-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-01-23T00:05:41.613-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Started PaginaApplication in 19.622 seconds (process running for 20.788)
+
+============================================================
+✅  Aplicación corriendo en puerto: 9090
+📄  Swagger UI: http://localhost:9090/swagger-ui.html
+🌐  API REST:   http://localhost:9090/api
+============================================================
+
+Hibernate: select count(*) from redes_sociales rs1_0
+ℹ️ Las redes sociales ya están en la base de datos
+2026-01-23T00:06:12.835-05:00  INFO 16501 --- [pagina] [nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-23T00:06:12.837-05:00  INFO 16501 --- [pagina] [nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-23T00:06:12.840-05:00  INFO 16501 --- [pagina] [nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+Hibernate: insert into usuarios (avatar_url,contrasena_hash,correo,estado,fecha_registro,nombre_usuario,rol,version) values (?,?,?,?,?,?,?,?)
+2026-01-23T00:08:48.162-05:00  INFO 16501 --- [pagina] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 42 class path changes (0 additions, 41 deletions, 1 modification)
+2026-01-23T00:08:48.194-05:00  INFO 16501 --- [pagina] [       Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-23T00:08:48.207-05:00  INFO 16501 --- [pagina] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-23T00:08:48.245-05:00  INFO 16501 --- [pagina] [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:08:48.293-05:00  INFO 16501 --- [pagina] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-01-23T00:08:50.097-05:00  INFO 16501 --- [pagina] [       Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.0)
+
+2026-01-23T00:08:50.808-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Starting PaginaApplication using Java 17.0.17 with PID 16501 (/home/dandev/Documentos/PINOS/backgamereviewer/target/classes started by dandev in /home/dandev/Documentos/PINOS/backgamereviewer)
+2026-01-23T00:08:50.820-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-23T00:08:52.299-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-23T00:08:52.325-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2026-01-23T00:08:53.297-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-01-23T00:08:53.299-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-23T00:08:53.299-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-23T00:08:53.326-05:00  INFO 16501 --- [pagina] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2481 ms
+2026-01-23T00:08:53.954-05:00  INFO 16501 --- [pagina] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-23T00:08:54.122-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-23T00:08:54.125-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-01-23T00:08:55.942-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@54dbeeba
+2026-01-23T00:08:55.945-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-01-23T00:08:56.135-05:00  WARN 16501 --- [pagina] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-23T00:08:56.828-05:00  INFO 16501 --- [pagina] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://dpg-d5l9lhogjchc7382b1v0-a.oregon-postgres.render.com/gamereviewer_db?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: gamereviewer_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-23T00:08:56.884-05:00  INFO 16501 --- [pagina] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-23T00:08:56.885-05:00  INFO 16501 --- [pagina] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:08:57.046-05:00  WARN 16501 --- [pagina] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-23T00:08:57.102-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-23T00:08:57.582-05:00  WARN 16501 --- [pagina] [  restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9cd9f77f-9a73-481b-916f-4c2039258b81
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-23T00:08:57.635-05:00  INFO 16501 --- [pagina] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-23T00:08:57.972-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-01-23T00:08:58.295-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-01-23T00:08:58.319-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Started PaginaApplication in 7.701 seconds (process running for 217.495)
+
+============================================================
+✅  Aplicación corriendo en puerto: 9090
+📄  Swagger UI: http://localhost:9090/swagger-ui.html
+🌐  API REST:   http://localhost:9090/api
+============================================================
+
+2026-01-23T00:08:58.337-05:00  INFO 16501 --- [pagina] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   ManagementWebSecurityAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.security.web.util.matcher.RequestMatcher', 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-01-23T00:09:02.006-05:00  INFO 16501 --- [pagina] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 42 class path changes (42 additions, 0 deletions, 0 modifications)
+2026-01-23T00:09:02.008-05:00  INFO 16501 --- [pagina] [       Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-23T00:09:02.009-05:00  INFO 16501 --- [pagina] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-23T00:09:02.024-05:00  INFO 16501 --- [pagina] [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:09:02.026-05:00  INFO 16501 --- [pagina] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-01-23T00:09:03.278-05:00  INFO 16501 --- [pagina] [       Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.0)
+
+2026-01-23T00:09:03.534-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Starting PaginaApplication using Java 17.0.17 with PID 16501 (/home/dandev/Documentos/PINOS/backgamereviewer/target/classes started by dandev in /home/dandev/Documentos/PINOS/backgamereviewer)
+2026-01-23T00:09:03.535-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-23T00:09:04.014-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-23T00:09:04.050-05:00  INFO 16501 --- [pagina] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 8 JPA repository interfaces.
+2026-01-23T00:09:04.420-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-01-23T00:09:04.423-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-23T00:09:04.424-05:00  INFO 16501 --- [pagina] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-23T00:09:04.445-05:00  INFO 16501 --- [pagina] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 904 ms
+2026-01-23T00:09:04.756-05:00  INFO 16501 --- [pagina] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-23T00:09:04.819-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-23T00:09:04.820-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-01-23T00:09:06.863-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@8a25b0b
+2026-01-23T00:09:06.865-05:00  INFO 16501 --- [pagina] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-01-23T00:09:07.041-05:00  WARN 16501 --- [pagina] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-23T00:09:07.771-05:00  INFO 16501 --- [pagina] [  restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://dpg-d5l9lhogjchc7382b1v0-a.oregon-postgres.render.com/gamereviewer_db?sslmode=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.1
+	Default catalog/schema: gamereviewer_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-23T00:09:07.974-05:00  INFO 16501 --- [pagina] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: alter table if exists videojuegos add column generos varchar(500)
+Hibernate: alter table if exists videojuegos add column plataformas varchar(500)
+2026-01-23T00:09:08.880-05:00  INFO 16501 --- [pagina] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:09:09.084-05:00  WARN 16501 --- [pagina] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-23T00:09:09.132-05:00  WARN 16501 --- [pagina] [  restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c1bcc7ea-0178-4d42-aeb4-9a185cb4383c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-23T00:09:09.133-05:00  INFO 16501 --- [pagina] [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-23T00:09:09.242-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-01-23T00:09:09.534-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-01-23T00:09:09.587-05:00  INFO 16501 --- [pagina] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-01-23T00:09:09.597-05:00  INFO 16501 --- [pagina] [  restartedMain] com.pagina.pagina.PaginaApplication      : Started PaginaApplication in 6.123 seconds (process running for 228.773)
+
+============================================================
+✅  Aplicación corriendo en puerto: 9090
+📄  Swagger UI: http://localhost:9090/swagger-ui.html
+🌐  API REST:   http://localhost:9090/api
+============================================================
+
+Hibernate: select count(*) from redes_sociales rs1_0
+ℹ️ Las redes sociales ya están en la base de datos
+2026-01-23T00:09:10.170-05:00  INFO 16501 --- [pagina] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   ManagementWebSecurityAutoConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'org.springframework.security.web.util.matcher.RequestMatcher', 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-01-23T00:09:12.795-05:00  INFO 16501 --- [pagina] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-23T00:09:12.799-05:00  INFO 16501 --- [pagina] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-23T00:09:12.808-05:00  INFO 16501 --- [pagina] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-23T00:09:12.814-05:00  INFO 16501 --- [pagina] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-01-23T00:09:14.062-05:00  INFO 16501 --- [pagina] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.

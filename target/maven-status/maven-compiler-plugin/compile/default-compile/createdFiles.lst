@@ -31,9 +31,12 @@ com/pagina/pagina/Config/CorsConfig.class
 com/pagina/pagina/Config/SwaggerConfig.class
 com/pagina/pagina/Modelos/RedesSociales.class
 com/pagina/pagina/Repositorios/InformacionFooterRepositorio.class
+com/pagina/pagina/DTOs/JuegoDTO.class
 com/pagina/pagina/Controladores/InformacionFooterControlador.class
 com/pagina/pagina/Repositorios/ReviewRepositorio.class
 com/pagina/pagina/Modelos/MarcasAsociadas.class
+com/pagina/pagina/DTOs/RegistroUsuarioDTO.class
+com/pagina/pagina/Config/SecurityConfig.class
 com/pagina/pagina/Config/DataInitializer.class
 com/pagina/pagina/Repositorios/MarcasAsociadasRepositorio.class
 com/pagina/pagina/Modelos/Usuario.class

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pagina.pagina.Modelos.Juegos;
+import com.pagina.pagina.DTOs.JuegoDTO;
 import com.pagina.pagina.Servicios.JuegosServicio;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -31,14 +31,14 @@ public class JuegosControlador {
 
     @Operation(summary = "Obtener todos los juegos", description = "Retorna una lista con todos los videojuegos registrados")
     @GetMapping
-    public ResponseEntity<List<Juegos>> obtenerTodosLosJuegos() {
-        List<Juegos> juegos = juegosServicio.obtenerTodosLosJuegos();
+    public ResponseEntity<List<JuegoDTO>> obtenerTodosLosJuegos() {
+        List<JuegoDTO> juegos = juegosServicio.obtenerTodosLosJuegos();
         return ResponseEntity.ok(juegos);
     }
 
     @Operation(summary = "Obtener juego por ID", description = "Retorna un videojuego específico basado en su ID")
     @GetMapping("/{id}")
-    public ResponseEntity<Juegos> obtenerJuegoPorId(
+    public ResponseEntity<JuegoDTO> obtenerJuegoPorId(
             @Parameter(description = "ID del juego a buscar", required = true) @PathVariable Long id) {
         return juegosServicio.obtenerJuegoPorId(id)
                 .map(ResponseEntity::ok)
@@ -47,19 +47,19 @@ public class JuegosControlador {
 
     @Operation(summary = "Crear un nuevo juego", description = "Crea y registra un nuevo videojuego en el sistema")
     @PostMapping
-    public ResponseEntity<Juegos> crearJuego(
-            @Parameter(description = "Datos del juego a crear", required = true) @RequestBody Juegos juego) {
-        Juegos nuevoJuego = juegosServicio.crearJuego(juego);
+    public ResponseEntity<JuegoDTO> crearJuego(
+            @Parameter(description = "Datos del juego a crear", required = true) @RequestBody JuegoDTO dto) {
+        JuegoDTO nuevoJuego = juegosServicio.crearJuego(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoJuego);
     }
 
     @Operation(summary = "Actualizar un juego", description = "Actualiza los datos de un videojuego existente")
     @PutMapping("/{id}")
-    public ResponseEntity<Juegos> actualizarJuego(
+    public ResponseEntity<JuegoDTO> actualizarJuego(
             @Parameter(description = "ID del juego a actualizar", required = true) @PathVariable Long id,
-            @Parameter(description = "Nuevos datos del juego", required = true) @RequestBody Juegos juego) {
+            @Parameter(description = "Nuevos datos del juego", required = true) @RequestBody JuegoDTO dto) {
         try {
-            Juegos juegoActualizado = juegosServicio.actualizarJuego(id, juego);
+            JuegoDTO juegoActualizado = juegosServicio.actualizarJuego(id, dto);
             return ResponseEntity.ok(juegoActualizado);
         } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();

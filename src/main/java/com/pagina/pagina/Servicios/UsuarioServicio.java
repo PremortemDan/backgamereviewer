@@ -1,13 +1,17 @@
 package com.pagina.pagina.Servicios;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.ObjectOptimisticLockingFailureException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pagina.pagina.DTOs.RegistroUsuarioDTO;
+import com.pagina.pagina.Modelos.Estado;
+import com.pagina.pagina.Modelos.Rol;
 import com.pagina.pagina.Modelos.Usuario;
 import com.pagina.pagina.Repositorios.UsuarioRepositorio;
 
@@ -16,6 +20,8 @@ public class UsuarioServicio {
 
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
+    
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     // Obtener todos los usuarios
     public List<Usuario> obtenerTodosLosUsuarios() {
@@ -25,6 +31,37 @@ public class UsuarioServicio {
     // Obtener usuario por ID
     public Optional<Usuario> obtenerUsuarioPorId(Long id) {
         return usuarioRepositorio.findById(id);
+    }
+
+    // Registrar un nuevo usuario usando DTO (para compatibilidad con frontend)
+    @Transactional
+    public Usuario registrarUsuario(RegistroUsuarioDTO dto) {
+        // Validaciones
+        String nombreUsuario = dto.obtenerNombreUsuario();
+        String correo = dto.obtenerCorreo();
+        String contrasena = dto.obtenerContrasena();
+        
+        if (nombreUsuario == null || nombreUsuario.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre de usuario es obligatorio");
+        }
+        if (correo == null || correo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El correo electrónico es obligatorio");
+        }
+        if (contrasena == null || contrasena.trim().isEmpty()) {
+            throw new IllegalArgumentException("La contraseña es obligatoria");
+        }
+        
+        // Crear el usuario
+        Usuario usuario = new Usuario();
+        usuario.setNombreUsuario(nombreUsuario.trim());
+        usuario.setCorreo(correo.trim());
+        usuario.setContrasenaHash(passwordEncoder.encode(contrasena));
+        usuario.setAvatarUrl(dto.getAvatarUrl());
+        usuario.setFechaRegistro(LocalDateTime.now());
+        usuario.setRol(Rol.USUARIO);
+        usuario.setEstado(Estado.ACTIVO);
+        
+        return usuarioRepositorio.save(usuario);
     }
 
     // Crear un nuevo usuario

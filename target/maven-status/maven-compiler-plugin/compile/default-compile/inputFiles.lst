@@ -1,5 +1,6 @@
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Config/CorsConfig.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Config/DataInitializer.java
+/home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Config/SecurityConfig.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Config/SwaggerConfig.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/InformacionFooterControlador.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/JuegosControlador.java
@@ -9,6 +10,8 @@
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/RedesSocialesControlador.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/ReviewControlador.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Controladores/UsuarioControlador.java
+/home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/JuegoDTO.java
+/home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/DTOs/RegistroUsuarioDTO.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Modelos/Estado.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Modelos/EstadoReview.java
 /home/dandev/Documentos/PINOS/backgamereviewer/src/main/java/com/pagina/pagina/Modelos/InformacionFooter.java

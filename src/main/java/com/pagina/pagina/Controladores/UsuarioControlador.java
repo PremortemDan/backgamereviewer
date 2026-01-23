@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pagina.pagina.DTOs.RegistroUsuarioDTO;
 import com.pagina.pagina.Modelos.Usuario;
 import com.pagina.pagina.Servicios.UsuarioServicio;
 
@@ -48,14 +49,17 @@ public class UsuarioControlador {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // POST - Crear un nuevo usuario
-    @Operation(summary = "Crear un nuevo usuario", description = "Crea y registra un nuevo usuario en el sistema")
+    // POST - Crear un nuevo usuario (con DTO para compatibilidad frontend)
+    @Operation(summary = "Crear un nuevo usuario", description = "Crea y registra un nuevo usuario en el sistema. Acepta tanto nombres de campos del frontend como del backend.")
     @PostMapping
     public ResponseEntity<?> crearUsuario(
-            @Parameter(description = "Datos del usuario a crear", required = true) @RequestBody Usuario usuario) {
+            @Parameter(description = "Datos del usuario a crear", required = true) @RequestBody RegistroUsuarioDTO dto) {
         try {
-            Usuario nuevoUsuario = usuarioServicio.crearUsuario(usuario);
+            Usuario nuevoUsuario = usuarioServicio.registrarUsuario(dto);
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Error de validación: " + e.getMessage());
         } catch (ObjectOptimisticLockingFailureException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("El usuario fue modificado por otra transacción. Por favor, intenta nuevamente.");

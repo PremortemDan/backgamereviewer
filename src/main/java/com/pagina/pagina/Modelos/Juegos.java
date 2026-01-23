@@ -1,14 +1,12 @@
 package com.pagina.pagina.Modelos;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
-import java.util.List;
 import lombok.Setter;
 import lombok.Getter;
 
@@ -29,13 +27,13 @@ public class Juegos {
     @Column(columnDefinition = "TEXT")
     private String descripcion;
     
-    @ElementCollection
-    @Column(name = "plataforma")
-    private List<String> plataformas;
+    // Cambiado a String separado por comas en lugar de @ElementCollection
+    @Column(length = 500)
+    private String plataformas;
     
-    @ElementCollection
-    @Column(name = "genero")
-    private List<String> generos;
+    // Cambiado a String separado por comas en lugar de @ElementCollection
+    @Column(length = 500)
+    private String generos;
     
     @Column(nullable = false)
     private LocalDate fechaLanzamiento;
